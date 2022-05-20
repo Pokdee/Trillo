@@ -520,6 +520,19 @@ body {
 .main .review_detail .overview .detail_bene-li {
   list-style: none;
   height: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.main .review_detail .overview .detail_bene-li .icon {
+  width: 15px;
+  height: 15px;
+  fill: var(--color-Primary);
 }
 
 .main .review_detail .overview .detail_rcmd {
