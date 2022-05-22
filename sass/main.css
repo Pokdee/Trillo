@@ -48,37 +48,6 @@ body {
           justify-content: space-between;
 }
 
-.container_header .icon {
-  width: 30px;
-  height: 30px;
-  fill: var(--color-Grey-dark-2);
-}
-
-.container_header .icon-con {
-  position: relative;
-}
-
-.container_header .icon_noti {
-  width: 20px;
-  height: 20px;
-  background-color: red;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 50%;
-  font-size: 1.3rem;
-  color: white;
-  position: absolute;
-  top: -20%;
-  left: 24%;
-}
-
 .container_header .logo {
   width: 80px;
   height: 80px;
@@ -137,41 +106,80 @@ body {
 
 .container_header .user {
   width: 20%;
+  height: 8rem;
+}
+
+.container_header .user_ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100%;
 }
 
-.container_header .user > * {
-  cursor: pointer;
+.container_header .user_li {
+  list-style: none;
+  height: 100%;
+  width: 28%;
+  position: relative;
 }
 
-.container_header .user_bookmarks {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+.container_header .user_li:hover {
+  background-color: var(--color-Grey-dark-3);
 }
 
-.container_header .user_chat {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
+.container_header .user .icon_con {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container_header .user .icon {
+  width: 30px;
+  height: 30px;
+}
+
+.container_header .user .icon_noti {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  color: white;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 20%;
+  right: 20%;
+  background-color: var(--color-Primary);
 }
 
 .container_header .user_profile {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
+  width: 44%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1rem;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .container_header .user-pic {
@@ -386,6 +394,11 @@ body {
   font-weight: 500;
 }
 
+.main .review_detail .hotel_location .location {
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 1rem;
+}
+
 .main .review_detail .hotel_score {
   width: 35%;
   height: 100%;
@@ -479,7 +492,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.7rem;
-  color: var(--color-Grey-dark-2);
   -webkit-box-shadow: var(--color-box-shadow);
           box-shadow: var(--color-box-shadow);
 }
@@ -490,6 +502,7 @@ body {
   height: 40%;
   padding-top: 2rem;
   padding-bottom: 5rem;
+  color: var(--color-Grey-dark-2);
 }
 
 .main .review_detail .overview .detail_arti-1 {
@@ -499,7 +512,7 @@ body {
 .main .review_detail .overview .detail_bene {
   width: 85%;
   height: 40%;
-  border-bottom: 1px solid var(--color-Grey-dark-3);
+  border-bottom: 1px solid var(--color-Grey-dark-2);
   padding: 5rem 0;
 }
 
@@ -527,6 +540,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 1rem;
+  color: var(--color-Grey-dark-2);
 }
 
 .main .review_detail .overview .detail_bene-li .icon {
@@ -547,7 +561,10 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  color: var(--color-Grey-dark-2);
+}
+
+.main .review_detail .overview .detail_rcmd .rcmd_text {
+  color: var(--color-Grey-dark-3);
 }
 
 .main .review_detail .overview .detail_rcmd .rcmd_users {
@@ -637,14 +654,12 @@ body {
 
 .main .review_detail .overview .review_box-user .user {
   font-size: 1.3rem;
-  color: var(--color-Grey-dark-1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: var(--color-Grey-dark-2);
   gap: 1rem;
 }
 
@@ -656,7 +671,7 @@ body {
 
 .main .review_detail .overview .review_box-user .user_name {
   text-transform: uppercase;
-  color: var(--color-Grey-dark-1);
+  color: var(--color-Grey-dark-2);
 }
 
 .main .review_detail .overview .review_box .score {

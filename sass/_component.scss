@@ -5,29 +5,6 @@
   align-items: center;
   justify-content: space-between;
 
-  //icons
-  .icon {
-    width: 30px;
-    height: 30px;
-    fill: var(--color-Grey-dark-2);
-  }
-  .icon-con {
-    position: relative;
-  }
-  .icon_noti {
-    width: 20px;
-    height: 20px;
-    background-color: red;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-size: 1.3rem;
-    color: white;
-    position: absolute;
-    top: -20%;
-    left: 24%;
-  }
   ///logo
   .logo {
     // flex: 1;
@@ -80,23 +57,54 @@
   /////user
   .user {
     width: 20%;
-    display: flex;
-    align-items: center;
-
-    & > * {
-      cursor: pointer;
-    }
-    &_bookmarks {
-      flex: 2;
-    }
-    &_chat {
-      flex: 2;
-    }
-    &_profile {
-      flex: 3;
+    height: 8rem;
+    &_ul {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      height: 100%;
+    }
+    &_li {
+      list-style: none;
+      height: 100%;
+      width: 28%;
+
+      position: relative;
+
+      &:hover {
+        background-color: var(--color-Grey-dark-3);
+      }
+    }
+    .icon_con {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon {
+      width: 30px;
+      height: 30px;
+    }
+    .icon_noti {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      color: white;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 20%;
+      right: 20%;
+      background-color: var(--color-Primary);
+    }
+    ///User Porfile and Name
+    &_profile {
+      width: 44%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
     }
     &-pic {
       height: 50px;
@@ -252,6 +260,10 @@
         align-items: center;
         color: var(--color-Primary);
         font-weight: 500;
+        .location {
+          border-bottom: 1px solid currentColor;
+          padding-bottom: 1rem;
+        }
       }
       &_score {
         width: 35%;
@@ -309,9 +321,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        // justify-content: space-around;
         font-size: 1.7rem;
-        color: var(--color-Grey-dark-2);
         box-shadow: var(--color-box-shadow);
 
         &_arti {
@@ -320,6 +330,7 @@
           height: 40%;
           padding-top: 2rem;
           padding-bottom: 5rem;
+          color: var(--color-Grey-dark-2);
 
           &-1 {
             margin: 2rem 0;
@@ -328,7 +339,7 @@
         &_bene {
           width: 85%;
           height: 40%;
-          border-bottom: 1px solid var(--color-Grey-dark-3);
+          border-bottom: 1px solid var(--color-Grey-dark-2);
           padding: 5rem 0;
           &-ul {
             width: 100%;
@@ -343,6 +354,8 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            color: var(--color-Grey-dark-2);
+
             .icon {
               width: 15px;
               height: 15px;
@@ -357,8 +370,8 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          color: var(--color-Grey-dark-2);
           .rcmd_text {
+            color: var(--color-Grey-dark-3);
           }
           .rcmd_users {
             display: flex;
@@ -417,10 +430,8 @@
 
             .user {
               font-size: 1.3rem;
-              color: var(--color-Grey-dark-1);
               display: flex;
               align-items: center;
-              color: var(--color-Grey-dark-2);
 
               gap: 1rem;
               &_pic {
@@ -430,7 +441,7 @@
               }
               &_name {
                 text-transform: uppercase;
-                color: var(--color-Grey-dark-1);
+                color: var(--color-Grey-dark-2);
               }
             }
           }

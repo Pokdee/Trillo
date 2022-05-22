@@ -26,31 +26,37 @@
           </button>
         </form>
         <div class="user">
-          <div class="user_bookmarks icon-con">
-            <svg class="user_bookmarks-icon icon">
-              <use xlink:href="./img/sprite.svg#icon-bookmark"></use>
-            </svg>
-            <div class="icon_noti">
-              <span class="icon_noti-text">7</span>
-            </div>
-          </div>
-          <div class="user_chat icon-con">
-            <svg class="user_chat-icon icon">
-              <use xlink:href="./img/sprite.svg#icon-chat"></use>
-            </svg>
-            <div class="icon_noti">
-              <span class="icon_noti-text">20</span>
-            </div>
-          </div>
-          <div class="user_profile">
-            <img
-              class="user-pic"
-              src="./img/user.jpg"
-              type="image/jpg"
-              alt=""
-            />
-            <h3 class="user-name"><span>Jonas</span></h3>
-          </div>
+          <ul class="user_ul">
+            <li class="user_li user_bookmarks">
+              <div class="icon_con">
+                <svg class="user_bookmarks-icon icon">
+                  <use xlink:href="./img/sprite.svg#icon-bookmark"></use>
+                </svg>
+                <div class="icon_noti">
+                  <span class="icon_noti-text">7</span>
+                </div>
+              </div>
+            </li>
+            <li class="user_li user_chat">
+              <div class="icon_con">
+                <svg class="user_chat-icon icon">
+                  <use xlink:href="./img/sprite.svg#icon-chat"></use>
+                </svg>
+                <div class="icon_noti">
+                  <span class="icon_noti-text">20</span>
+                </div>
+              </div>
+            </li>
+            <li class="user_li user_profile">
+              <img
+                class="user-pic"
+                src="./img/user.jpg"
+                type="image/jpg"
+                alt=""
+              />
+              <h3 class="user-name"><span>Jonas</span></h3>
+            </li>
+          </ul>
         </div>
       </div>
       <div class="container_content">
@@ -135,7 +141,7 @@
                   <svg class="icon">
                     <use xlink:href="./img/sprite.svg#icon-location-pin"></use>
                   </svg>
-                  <span>Albufeira,Portugal</span>
+                  <span class="location">Albufeira,Portugal</span>
                 </div>
                 <div class="hotel_score">
                   <span class="point">8.6</span
@@ -281,17 +287,17 @@
                     <div class="review_box-user">
                       <div class="user">
                         <img
-                          src="./img/user-5.jpg"
+                          src="./img/user-2.jpg"
                           alt="user picture"
                           class="user_pic"
                         />
 
                         <div class="name_n_date">
-                          <h3 class="user_name">nick smith</h3>
-                          <h4 class="date">Feb 23rd,2017</h4>
+                          <h3 class="user_name">mary thomas</h3>
+                          <h4 class="date">Sept 13rd,2016</h4>
                         </div>
                       </div>
-                      <div class="score">7.8</div>
+                      <div class="score">8.2</div>
                     </div>
                   </div>
                   <button class="review_show">Show all &rarr;</button>
