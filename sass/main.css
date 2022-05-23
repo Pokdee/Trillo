@@ -106,7 +106,9 @@ body {
 
 .container_header .user {
   width: 20%;
-  height: 8rem;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
 }
 
 .container_header .user_ul {
@@ -124,15 +126,6 @@ body {
   height: 100%;
   width: 28%;
   position: relative;
-}
-
-.container_header .user_li:hover {
-  background-color: var(--color-Grey-dark-3);
-}
-
-.container_header .user .icon_con {
-  width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,6 +135,10 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.container_header .user_li:hover {
+  background-color: var(--color-Grey-dark-3);
 }
 
 .container_header .user .icon {
@@ -314,8 +311,8 @@ body {
 }
 
 .main .icon {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   fill: currentColor;
 }
 
@@ -335,6 +332,7 @@ body {
 }
 
 .main .images_box-content {
+  display: block;
   height: 100%;
   width: 100%;
 }
@@ -353,30 +351,31 @@ body {
 
 .main .review_detail .hotel {
   height: 10%;
+  border-bottom: 1px solid var(--color-Grey-light-2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .main .review_detail .hotel_name {
   text-transform: uppercase;
   font-size: 3rem;
-  font-weight: 200;
+  margin-left: 5%;
+  font-weight: 300;
 }
 
 .main .review_detail .hotel_rating {
+  margin-right: auto;
+  margin-left: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main .review_detail .hotel_rating .icon {
@@ -384,40 +383,99 @@ body {
 }
 
 .main .review_detail .hotel_location {
+  margin-left: auto;
+  margin-right: 2%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 0.5rem;
   color: var(--color-Primary);
-  font-weight: 500;
 }
 
 .main .review_detail .hotel_location .location {
+  padding-bottom: 0.5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
   border-bottom: 1px solid currentColor;
-  padding-bottom: 1rem;
+  background-color: white;
+  font-size: 1.5rem;
+  color: currentColor;
+}
+
+.main .review_detail .hotel_location .location:hover {
+  color: var(--color-Grey-dark-2);
+}
+
+.main .review_detail .hotel_location .location:focus {
+  -webkit-animation: pulsebtn 1s infinite forwards;
+          animation: pulsebtn 1s infinite forwards;
+}
+
+@-webkit-keyframes pulsebtn {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+            box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+    -webkit-box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+            box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+            box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+  }
+}
+
+@keyframes pulsebtn {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+            box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    -webkit-transform: scale(1.08);
+            transform: scale(1.08);
+    -webkit-box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+            box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+            box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.5);
+  }
 }
 
 .main .review_detail .hotel_score {
-  width: 35%;
-  height: 100%;
-  background-color: var(--color-Primary);
+  width: 9%;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: var(--color-Primary);
   color: white;
-  font-weight: 400;
 }
 
 .main .review_detail .hotel_score .point {
@@ -426,34 +484,7 @@ body {
 
 .main .review_detail .hotel_score .votes {
   font-size: 1rem;
-}
-
-.main .review_detail .name_n_rating {
-  height: 100%;
-  width: 40%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-.main .review_detail .loca_n_score {
-  height: 100%;
-  width: 23%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  font-weight: 700;
 }
 
 .main .review_detail .overview {
@@ -543,10 +574,17 @@ body {
   color: var(--color-Grey-dark-2);
 }
 
-.main .review_detail .overview .detail_bene-li .icon {
-  width: 15px;
-  height: 15px;
-  fill: var(--color-Primary);
+.main .review_detail .overview .detail_bene-li::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--color-Primary);
+  -webkit-mask-image: url(../img/SVG/chevron-thin-right.svg);
+          mask-image: url(../img/SVG/chevron-thin-right.svg);
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 
 .main .review_detail .overview .detail_rcmd {
@@ -565,6 +603,7 @@ body {
 
 .main .review_detail .overview .detail_rcmd .rcmd_text {
   color: var(--color-Grey-dark-3);
+  margin-right: auto;
 }
 
 .main .review_detail .overview .detail_rcmd .rcmd_users {
@@ -580,6 +619,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  border: 5px solid white;
 }
 
 .main .review_detail .overview .detail_rcmd .rcmd_users-img:not(:last-child) {
@@ -636,6 +676,16 @@ body {
   width: 90%;
   font-weight: 700;
   line-height: 2.5rem;
+  position: relative;
+}
+
+.main .review_detail .overview .review_box-text::before {
+  content: "\201C";
+  font-size: 15rem;
+  color: rgba(7, 7, 7, 0.2);
+  position: absolute;
+  top: 5%;
+  left: -12%;
 }
 
 .main .review_detail .overview .review_box-user {
@@ -685,6 +735,28 @@ body {
   color: var(--color-Primary);
   border-bottom: 1px solid currentColor;
   padding-bottom: 0.5rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.main .review_detail .overview .review_show .arrow {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.main .review_detail .overview .review_show:hover {
+  color: black;
+}
+
+.main .review_detail .overview .review_show:hover .arrow {
+  margin-left: 1rem;
+  color: currentColor;
+}
+
+.main .review_detail .overview .review_show:focus {
+  -webkit-animation: pulsebtn 1s infinite forwards;
+          animation: pulsebtn 1s infinite forwards;
 }
 
 .main .booking {
@@ -712,11 +784,48 @@ body {
 
 .main .booking_button {
   font-size: 2rem;
-  background-color: var(--color-Primary);
-  padding: 2rem 8rem;
+  padding: 3.8rem 15rem;
   border-radius: 7rem;
   border: none;
   color: white;
+  background-image: -webkit-gradient(linear, left top, right top, from(var(--color-Primary-light)), to(var(--color-Primary-dark)));
+  background-image: linear-gradient(to right, var(--color-Primary-light), var(--color-Primary-dark));
+  position: relative;
+}
+
+.main .booking_button > * {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.main .booking_button:hover {
+  background-image: -webkit-gradient(linear, right top, left top, from(var(--color-Primary-light)), to(var(--color-Primary-dark)));
+  background-image: linear-gradient(to left, var(--color-Primary-light), var(--color-Primary-dark));
+}
+
+.main .booking_button:hover .visible {
+  -webkit-transform: translate(-50%, 300%);
+          transform: translate(-50%, 300%);
+  opacity: 0;
+}
+
+.main .booking_button:hover .invisible {
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 100;
+}
+
+.main .booking .invisible {
+  -webkit-transform: translate(-50%, -300%);
+          transform: translate(-50%, -300%);
+  opacity: 0;
 }
 
 .container {
@@ -741,7 +850,7 @@ body {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 15%;
           flex: 0 0 15%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-Grey-light-2);
 }
 
 .container_content {
