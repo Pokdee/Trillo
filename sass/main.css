@@ -27,6 +27,24 @@ html {
   font-weight: 500;
 }
 
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 68.75em) {
+  html {
+    font-size: 37.5%;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 31.5%;
+  }
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-size: var(--default-font-size);
@@ -48,9 +66,17 @@ body {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .container_header {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    justify-items: center;
+  }
+}
+
 .container_header .logo {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin-left: 2rem;
 }
 
@@ -62,6 +88,16 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .container_header .form {
+    width: 80%;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    margin: auto;
+  }
 }
 
 .container_header .form_input {
@@ -78,6 +114,12 @@ body {
   border-radius: 3rem;
   margin-right: -4rem;
   color: var(--color-Grey-dark-2);
+}
+
+@media only screen and (max-width: 56.25em) {
+  .container_header .form_input {
+    margin-right: -5rem;
+  }
 }
 
 .container_header .form_input:focus {
@@ -102,6 +144,21 @@ body {
   width: 25px;
   height: 25px;
   fill: var(--color-Grey-dark-2);
+  margin: auto;
+}
+
+@media only screen and (max-width: 75em) {
+  .container_header .form_button-icon {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .container_header .form_button-icon {
+    height: 15px;
+    width: 15px;
+  }
 }
 
 .container_header .user {
@@ -109,6 +166,12 @@ body {
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .container_header .user {
+    width: 25%;
+  }
 }
 
 .container_header .user_ul {
@@ -142,8 +205,9 @@ body {
 }
 
 .container_header .user .icon {
-  width: 30px;
-  height: 30px;
+  width: 2.5rem;
+  height: 2.5rem;
+  fill: var(--color-Grey-dark-2);
 }
 
 .container_header .user .icon_noti {
@@ -157,14 +221,20 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 50%;
-  font-size: 1.3rem;
+  font-size: 0.9rem;
   color: white;
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   top: 20%;
   right: 20%;
   background-color: var(--color-Primary);
+}
+
+@media only screen and (max-width: 68.75em) {
+  .container_header .user .icon_noti {
+    top: 30%;
+  }
 }
 
 .container_header .user_profile {
@@ -180,7 +250,8 @@ body {
 }
 
 .container_header .user-pic {
-  height: 50px;
+  height: 5rem;
+  width: 5rem;
   border-radius: 50%;
 }
 
@@ -214,6 +285,13 @@ body {
   margin-bottom: 3rem;
   text-align: center;
   line-height: 2rem;
+  padding: 0 1rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .nav .copyright {
+    display: none;
+  }
 }
 
 .nav .navi {
@@ -228,6 +306,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .nav .navi {
+    margin-top: 0%;
+  }
 }
 
 .nav .ul {
@@ -247,6 +331,16 @@ body {
   gap: 1rem;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .nav .ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 0;
+  }
+}
+
 .nav .li {
   list-style: none;
   display: -webkit-box;
@@ -258,10 +352,6 @@ body {
   width: 100%;
   height: 7rem;
   cursor: pointer;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, var(--color-Primary)), color-stop(50%, var(--color-Grey-dark-1)));
-  background-image: linear-gradient(to right, var(--color-Primary) 50%, var(--color-Grey-dark-1) 50%);
-  background-size: 200%;
-  background-position: right;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   position: relative;
@@ -279,8 +369,15 @@ body {
   transition: height 0.4s cubic-bezier(1, -0.01, 0.03, 1), width 0.3s cubic-bezier(0.99, -0.01, 0, 1) 0.4s;
 }
 
-.nav .li:hover::before,
-.nav .li .a:active, .nav .li_active::before {
+@media only screen and (hover: hover) {
+  .nav .li:hover::before {
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-Primary);
+  }
+}
+
+.nav .li_active::before {
   height: 100%;
   width: 100%;
   background-color: var(--color-Primary);
@@ -301,18 +398,29 @@ body {
   z-index: 4;
   width: 100%;
   height: 100%;
+  font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .nav .a:link,
+  .nav .a:visited,
+  .nav .a {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 .nav .a_icon {
   width: 25px;
   height: 25px;
   fill: currentColor;
-  margin-left: 5rem;
+  margin-left: 2.5rem;
 }
 
 .main .icon {
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   fill: currentColor;
 }
 
@@ -349,8 +457,14 @@ body {
   background-color: white;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .main .review_detail {
+    height: 83%;
+  }
+}
+
 .main .review_detail .hotel {
-  height: 10%;
+  height: 8%;
   border-bottom: 1px solid var(--color-Grey-light-2);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -492,6 +606,12 @@ body {
   background-color: var(--color-Grey-light-3);
 }
 
+@media only screen and (max-width: 37.5em) {
+  .main .review_detail .overview {
+    height: 100%;
+  }
+}
+
 .main .review_detail .overview .detail_n_review {
   width: 90%;
   height: 85%;
@@ -508,6 +628,17 @@ body {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .main .review_detail .overview .detail_n_review {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    gap: 5rem;
+  }
+}
+
 .main .review_detail .overview .detail {
   height: 100%;
   width: 60%;
@@ -522,29 +653,44 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   -webkit-box-shadow: var(--color-box-shadow);
           box-shadow: var(--color-box-shadow);
 }
 
+@media only screen and (max-width: 37.5em) {
+  .main .review_detail .overview .detail {
+    width: 80%;
+  }
+}
+
 .main .review_detail .overview .detail_arti {
   width: 85%;
-  border-bottom: 1px solid var(--color-Grey-dark-3);
   height: 40%;
   padding-top: 2rem;
-  padding-bottom: 5rem;
   color: var(--color-Grey-dark-2);
+}
+
+@media only screen and (max-width: 56.25em) {
+  .main .review_detail .overview .detail_arti {
+    padding-bottom: 8rem;
+  }
 }
 
 .main .review_detail .overview .detail_arti-1 {
   margin: 2rem 0;
 }
 
+.main .review_detail .overview .detail_arti-2 {
+  border-bottom: 1px solid var(--color-Grey-dark-3);
+  padding-bottom: 5rem;
+}
+
 .main .review_detail .overview .detail_bene {
   width: 85%;
   height: 40%;
   border-bottom: 1px solid var(--color-Grey-dark-2);
-  padding: 5rem 0;
+  padding-bottom: 5rem;
 }
 
 .main .review_detail .overview .detail_bene-ul {
@@ -564,6 +710,7 @@ body {
 .main .review_detail .overview .detail_bene-li {
   list-style: none;
   height: 25%;
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -616,10 +763,10 @@ body {
 }
 
 .main .review_detail .overview .detail_rcmd .rcmd_users-img {
-  width: 50px;
-  height: 50px;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
-  border: 5px solid white;
+  border: 0.5rem solid white;
 }
 
 .main .review_detail .overview .detail_rcmd .rcmd_users-img:not(:last-child) {
@@ -645,6 +792,13 @@ body {
           justify-content: space-between;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .main .review_detail .overview .review {
+    width: 80%;
+    gap: 5rem;
+  }
+}
+
 .main .review_detail .overview .review_box {
   width: 100%;
   height: 41%;
@@ -660,7 +814,7 @@ body {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   background-color: white;
   padding: 2rem 2rem 0 2rem;
   color: var(--color-Grey-dark-2);
@@ -668,13 +822,15 @@ body {
           box-shadow: var(--color-box-shadow);
 }
 
-.main .review_detail .overview .review_box-2 {
-  height: 35%;
+@media only screen and (max-width: 37.5em) {
+  .main .review_detail .overview .review_box {
+    height: 15rem;
+  }
 }
 
 .main .review_detail .overview .review_box-text {
   width: 90%;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 2.5rem;
   position: relative;
 }
@@ -686,6 +842,13 @@ body {
   position: absolute;
   top: 5%;
   left: -12%;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .main .review_detail .overview .review_box-text::before {
+    left: -7%;
+    top: 50%;
+  }
 }
 
 .main .review_detail .overview .review_box-user {
@@ -703,7 +866,7 @@ body {
 }
 
 .main .review_detail .overview .review_box-user .user {
-  font-size: 1.3rem;
+  font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -714,8 +877,8 @@ body {
 }
 
 .main .review_detail .overview .review_box-user .user_pic {
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
 }
 
@@ -738,6 +901,12 @@ body {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .main .review_detail .overview .review_show {
+    margin-top: 5rem;
+  }
 }
 
 .main .review_detail .overview .review_show .arrow {
@@ -783,13 +952,16 @@ body {
 }
 
 .main .booking_button {
-  font-size: 2rem;
-  padding: 3.8rem 15rem;
+  font-size: 1.5rem;
+  padding: 3rem 12rem;
   border-radius: 7rem;
   border: none;
   color: white;
   background-image: -webkit-gradient(linear, left top, right top, from(var(--color-Primary-light)), to(var(--color-Primary-dark)));
   background-image: linear-gradient(to right, var(--color-Primary-light), var(--color-Primary-dark));
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
   position: relative;
 }
 
@@ -800,8 +972,8 @@ body {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 100%;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
   overflow: hidden;
 }
 
@@ -814,22 +986,30 @@ body {
   -webkit-transform: translate(-50%, 300%);
           transform: translate(-50%, 300%);
   opacity: 0;
+  visibility: hidden;
 }
 
 .main .booking_button:hover .invisible {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   opacity: 100;
+  visibility: visible;
+}
+
+.main .booking_button:focus {
+  -webkit-animation: pulsebtn 0.2s infinite;
+          animation: pulsebtn 0.2s infinite;
 }
 
 .main .booking .invisible {
   -webkit-transform: translate(-50%, -300%);
           transform: translate(-50%, -300%);
   opacity: 0;
+  visibility: hidden;
 }
 
 .container {
-  width: 90%;
+  max-width: 120rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -846,11 +1026,24 @@ body {
   margin: 8rem auto;
 }
 
+@media only screen and (max-width: 75em) {
+  .container {
+    margin: auto;
+    max-width: 100vw;
+  }
+}
+
 .container_header {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 15%;
           flex: 0 0 15%;
   border-bottom: 1px solid var(--color-Grey-light-2);
+}
+
+@media only screen and (max-width: 37.5em) {
+  .container_header {
+    padding-bottom: 3.5rem;
+  }
 }
 
 .container_content {
@@ -862,12 +1055,29 @@ body {
   display: flex;
 }
 
+@media only screen and (max-width: 56.25em) {
+  .container_content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 .container_content .nav {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 18%;
           flex: 0 0 18%;
   border-right: 1px solid black;
   background-color: var(--color-Grey-dark-1);
+}
+
+@media only screen and (max-width: 56.25em) {
+  .container_content .nav {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+  }
 }
 
 .container_content .main {
